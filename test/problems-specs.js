@@ -58,9 +58,12 @@ describe("Problems", function () {
         });
         it('should return only the first half of the array', function () {
             expect(firstHalf([1, 2])).to.deep.equal([1]);
+            expect(firstHalf([0, 1, 2, 3, 4, 5, 6, 7])).to.deep.equal([0, 1, 2, 3]);
         });
         it('should be the inclusive first half', function() {
-            expect(firstHalf([1])).to.deep.equal([1]);
+            expect(firstHalf([0, 1, 2])).to.deep.equal([0, 1]);
+            expect(firstHalf([0, 1, 2, 3, 4, 5, 6, 7, 8])).to.deep.equal([0, 1, 2, 3, 4]);
+
         });
     })
 
@@ -70,9 +73,11 @@ describe("Problems", function () {
         });
         it('should return only the second half the array', function () {
             expect(secondHalf([1, 2])).to.deep.equal([2]);
+            expect(secondHalf([0, 1, 2, 3, 4, 5, 6, 7])).to.deep.equal([4, 5, 6, 7]);
         });
-        it('should be the exclusive first half', function() {
-            expect(secondHalf([1])).to.deep.equal([]);
+        it('should be the exclusive second half', function() {
+            expect(secondHalf([0, 1, 2])).to.deep.equal([2]);
+            expect(secondHalf([0, 1, 2, 3, 4, 5, 6, 7, 8])).to.deep.equal([5, 6, 7, 8]);
         });
     })
 });

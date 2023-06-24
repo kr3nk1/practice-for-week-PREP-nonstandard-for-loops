@@ -44,9 +44,9 @@ function nthPower(arr, n) {
     const indices = [];
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr.length; j++) {
-            let powerTwo = n**j;
+            let powerOfN = n**j;
             let result = arr[i];
-            if (result === powerTwo) {
+            if (result === powerOfN) {
             indices.push(arr.indexOf(arr[i]));
         }
         }
@@ -60,13 +60,32 @@ function nthPower(arr, n) {
 function firstHalf(arr) {
     // Return an array containing the first half of an array
     // Include middle index on odd length arr
-    // Your code here
+    let result = [];
+    let middleIndex = Math.ceil(arr.length / 2);
+    if (arr.length % 2 === 0) {
+    for (let i = 0; i < arr.length / 2 ; i++) {
+        result.push(arr[i]);
+    }
+    return result;
+
+    } else {
+        for (let i = 0; i < middleIndex; i++) {
+            result.push(arr[i]);
+        }
+        return result;
+    }
 }
 
 function secondHalf(arr) {
     // Return an array containing the second half of an array
     // Exclude middle index on odd length arr
-    // Your code here
+    let result = [];
+    let middleIndex = Math.ceil(arr.length / 2);
+    for (let i = middleIndex; i < arr.length; i++) {
+        result.push(arr[i]);
+    }
+    return result;
+
 }
 
 module.exports = {
